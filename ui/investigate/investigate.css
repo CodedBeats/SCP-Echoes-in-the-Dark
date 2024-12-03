@@ -1,0 +1,128 @@
+#investigate-page {
+    z-index: 2;
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+/* frame parts */
+.top,
+.left,
+.right {
+    position: absolute;
+    background-color: #050709;
+}
+
+.top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+}
+
+.left,
+.right {
+    top: 10%;
+    /* account for top frame */
+    width: 7%;
+    height: 90%;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+/* scan instructions */
+#search-instructions-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    background-color: #1f1f1f;
+    text-align: center;
+    margin-bottom: 25%;
+    padding: 10px;
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+    transition: 1s ease;
+}
+
+.search-instructions-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-instructions-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#close-search-instructions-btn {
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: red;
+    pointer-events: all;
+}
+
+.search-instructions-content {
+    text-align: left;
+    font-size: 1em;
+}
+
+/* field operative gear */
+.gear-container {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+    transform: translateY(-200px);
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 5%;
+    gap: 8px;
+}
+
+.gear {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid rgb(96, 96, 96);
+    background-color: black;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    pointer-events: all;
+}
+
+.gear>img {
+    width: 75%;
+    height: 75%;
+}
+
+.active-gear {
+    border-color: red !important;
+}
+
+/* temp testing btn */
+#spawn-scp {
+    pointer-events: all;
+}

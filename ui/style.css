@@ -1,0 +1,22 @@
+.ui-container {
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+    color: white;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0;
+    margin-top: 20px;
+    word-wrap: normal;
+}
+
+a-scene {
+    pointer-events: auto;
+}

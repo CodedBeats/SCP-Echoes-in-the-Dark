@@ -1,0 +1,233 @@
+<div class="ui-container">
+    <div id="splash-screen">
+        <img class="splash-img" src="assets/imgs/logo.png" alt="splash-img" />
+    </div>
+
+    <div id="menu-container">
+        <div class="bottom-nav">
+            <div class="nav-items">
+                <div id="home-nav-btn" class="menu-item">
+                    <div>
+                        <img
+                            class="menu-icon"
+                            src="./assets/imgs/icons/scp.png"
+                            alt="scp-logo"
+                        />
+                    </div>
+                    <div class="menu-item-text">Home</div>
+                </div>
+                <div id="investigate-nav-btn" class="menu-item">
+                    <div>
+                        <img
+                            class="menu-icon"
+                            src="./assets/imgs/icons/magnifying-glass.png"
+                            alt="search"
+                        />
+                    </div>
+                    <div class="menu-item-text">Investigate</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="home-page">
+        <div class="home-container">
+            <h1>Welcome Field Agent</h1>
+            <p>
+                Thank you for responding to this urgent call. Your expertise in
+                anomaly detection and containment has proven invaluable, and
+                once again, your skills are required. As you know, the safety of
+                the Foundation and potentially the world depends on agents like
+                you.
+            </p>
+            <p>
+                <span>Mission Brief</span>: Reports of multiple SCP incursions
+                have been flagged in your current location. These entities are
+                unstable, and their presence poses a significant threat. Your
+                task is to investigate the area, locate any SCP anomolies, and
+                assess the level of danger. Once identified, use your operative
+                gear to analyze, neutralize, or contain the anomalies. Proceed
+                with caution, Agent. The unseen is lurking, and failure is not
+                an option.
+            </p>
+            <button id="investigate-btn">Begin Investigation</button>
+            <a href="https://scp-wiki.wikidot.com/" class="scp-website-link"
+                >More SCP Info</a
+            >
+        </div>
+    </div>
+
+    <div id="investigate-page">
+        <div class="top">
+            <h1>Detect and Contain Anomalies</h1>
+        </div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div id="search-instructions-container">
+            <div class="search-instructions-header">
+                <div class="search-instructions-title">
+                    Foundation Field Briefing
+                </div>
+                <button id="close-search-instructions-btn">X</button>
+            </div>
+            <div class="search-instructions-content">
+                Attention, Field Operative. Your scanner has been calibrated for
+                anomaly detection. Move cautiously through the area, but remain
+                vigilant for auditory disturbances. These are the first
+                indicators of an SCP anomoly.
+                <br /><br />
+                When an anomaly manifests, use your scanner to gather
+                preliminary data. Once identified, use the appropriate gear to
+                engage and contain the entity according to protocol.
+                <br /><br />
+                Remember: Each piece of equipment has a specific role in
+                containment. Improper use could result in escalation or
+                compromise of the operation. Stay focused, remain calm, and
+                execute your mission with precision. The Foundation is relying
+                on you.
+            </div>
+        </div>
+        <div class="gear-container">
+            <div id="scan-gear" class="gear active-gear">
+                <img src="assets/imgs/icons/eye-target.png" />
+                Scan
+            </div>
+            <div id="tranq-gear" class="gear">
+                <img src="assets/imgs/icons/tranq.png" />
+                Tranq
+            </div>
+            <div id="gun-gear" class="gear">
+                <img src="assets/imgs/icons/gun.png" />
+                Gun
+            </div>
+            <div id="mirror-gear" class="gear">
+                <img src="assets/imgs/icons/mirror.png" />
+                Mirror
+            </div>
+        </div>
+        <div id="scan-popup" class="gear-popup">
+            <div class="gear-popup-header">
+                <div id="scan-popup-title" class="gear-popup-title"></div>
+                <button id="close-scan-popup-btn" class="close-gear-popup-btn">
+                    X
+                </button>
+            </div>
+            <div id="scan-popup-content" class="gear-popup-content"></div>
+        </div>
+        <div id="contained-popup" class="gear-popup">
+            <div class="gear-popup-header">
+                <div class="gear-popup-title">Containment Successful</div>
+                <button
+                    id="close-contained-popup-btn"
+                    class="close-gear-popup-btn"
+                >
+                    X
+                </button>
+            </div>
+            <div id="contained-popup-content" class="gear-popup-content"></div>
+        </div>
+        <div id="killed-popup" class="gear-popup">
+            <div class="gear-popup-header">
+                <div class="gear-popup-title">Containment Failure</div>
+            </div>
+            <div id="killed-popup-content" class="gear-popup-content"></div>
+            <button id="home-killed-btn">Home</button>
+        </div>
+        <div id="success-popup" class="gear-popup">
+            <div class="gear-popup-header">
+                <div class="gear-popup-title">Mission Complete</div>
+            </div>
+            <div class="gear-popup-content">
+                Congratulations Agent! You have successfully contained all
+                identified SCP anomalies. Your quick thinking and
+                resourcefulness have ensured the safety of your surroundings.
+                <br /><br />
+                The Foundation relies on agents like you to maintain our world’s
+                safety.
+                <br />
+                You can always start another investigation if you wish to
+                undertake the mission again.
+            </div>
+            <button id="home-success-btn">Home</button>
+        </div>
+    </div>
+</div>
+
+<!-- AR scene -->
+<a-scene
+    navigator-component
+    typewriter-component
+    investigate-component
+    theme-music-component
+    spawn-scps-component
+    xrextras-gesture-detector
+    landing-page
+    xrextras-loading
+    xrextras-runtime-error
+    renderer="colorManagement: true; webgl2: true;"
+    xrweb
+>
+    <!-- assets -->
+    <a-assets>
+        <a-asset-item
+            id="scp-049"
+            src="./assets/scps/GLBs/scp-049.glb"
+        ></a-asset-item>
+        <a-asset-item
+            id="scp-096"
+            src="./assets/scps/GLBs/scp-096.glb"
+        ></a-asset-item>
+        <a-asset-item
+            id="scp-173"
+            src="./assets/scps/GLBs/scp-173.glb"
+        ></a-asset-item>
+        <a-asset-item
+            id="scp-3199"
+            src="./assets/scps/GLBs/scp-3199.glb"
+        ></a-asset-item>
+        <a-asset-item
+            id="scp-939"
+            src="./assets/scps/GLBs/scp-939.glb"
+        ></a-asset-item>
+    </a-assets>
+
+    <!--- core stuff --->
+    <a-camera
+        id="camera"
+        position="0 8 8"
+        raycaster="objects: .cantap"
+        cursor="
+        fuse: true;
+        fuseTimeout: 1500;
+        rayOrigin: mouse;"
+    >
+    </a-camera>
+
+    <!-- light -->
+    <a-entity
+        light="type: directional;
+           intensity: 0.8;
+           castShadow: true;
+           shadowMapHeight:2048;
+           shadowMapWidth:2048;
+           shadowCameraTop: 10;
+           target: #model;"
+        position="1 4.3 2.5"
+        xrextras-attach="target: model; offset: 1 15 3;"
+        shadow
+    >
+    </a-entity>
+
+    <a-light type="ambient" intensity="0.5"></a-light>
+
+    <a-plane
+        id="ground"
+        position="0 -5 0"
+        rotation="-90 0 0"
+        width="50"
+        height="50"
+        material="shader: shadow"
+        shadow
+    ></a-plane>
+    <!-------------->
+</a-scene>

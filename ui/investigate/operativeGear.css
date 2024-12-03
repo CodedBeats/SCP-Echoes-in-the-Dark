@@ -1,0 +1,81 @@
+/* ===== general ===== */
+.gear-popup {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 75%;
+    transform: translate(-50%, -30%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    z-index: 3;
+    transition: 0.5s ease;
+    background-color: rgb(43, 43, 43);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.gear-popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.gear-popup-title {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.close-gear-popup-btn {
+    font-size: 1.3em;
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: red;
+    pointer-events: all;
+}
+
+.gear-popup-content {
+    text-align: center;
+}
+
+/* ===== ===== */
+
+/* ===== scan ===== */
+/* ===== ===== */
+
+/* ===== contained ===== */
+/* ===== ===== */
+
+/* ===== killed ===== */
+#home-killed-btn {
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #5e0000;
+    border: 1px solid #6b6b6b;
+    border-radius: 10px;
+    pointer-events: all;
+}
+
+/* ===== ===== */
+
+/* ===== success ===== */
+#home-success-btn {
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #5e0000;
+    border: 1px solid #6b6b6b;
+    border-radius: 10px;
+    pointer-events: all;
+}
+
+/* ===== ===== */
